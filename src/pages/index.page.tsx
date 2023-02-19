@@ -1,10 +1,9 @@
-import React from "react";
-import { Button, Avatar, Typography } from "antd";
+import { Button } from "antd";
+
+// import { Typography } from "antd";
 import { fetchProviceList } from "./home/api";
-// import type { IProvice } from './home/api'
 import styles from "./home/index.module.scss";
-import { StepBackwardOutlined } from "@ant-design/icons";
-import ButtomCom from "./home/components/Button";
+// import type { IProvice } from './home/api'
 
 // const headSeo = {
 //   keywords: '111',
@@ -13,14 +12,9 @@ import ButtomCom from "./home/components/Button";
 // }
 // props: { proviceList: IProvice[] }
 export default function () {
-  const { Title } = Typography;
   return (
-    <div className="yyyyyyyyy">
-      <ButtomCom></ButtomCom>
-      <Avatar>U</Avatar>
+    <div>
       <Button type="primary">antd 按钮</Button>
-      <StepBackwardOutlined />
-      <Title level={2}>h2. Ant Design</Title>
       <div className={styles["home-container"]}>官网实战</div>;
     </div>
   );

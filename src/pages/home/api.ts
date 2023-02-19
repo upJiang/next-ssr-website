@@ -9,6 +9,7 @@ interface IProviceListResult {
   code: number
   message: string
   result: string
+  
 }
 
 // 获取省份列表

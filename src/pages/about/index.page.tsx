@@ -1,6 +1,6 @@
 // import type { IProvice } from './home/api'
-import { Button, Avatar, Typography } from "antd";
 import { StepBackwardOutlined } from "@ant-design/icons";
+import { Avatar, Button, Typography } from "antd";
 
 // const headSeo = {
 //   keywords: '111',
