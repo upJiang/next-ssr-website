@@ -1,26 +1,25 @@
-// import { request } from '@/utils/request'
+import { request } from "@/utils/request";
 
-export interface IProvice {
-  code: string
-  name: string
-  provinceName: string
-}
-interface IProviceListResult {
-  code: number
-  message: string
-  result: string
-  
+export interface IMockData {
+  store: {
+    [key: string]: {
+      name: string;
+      address: string;
+      marker: number[];
+    }[];
+  };
+  seo: string;
 }
 
-// 获取省份列表
+// 获取mock数据
+export function fetchMockData() {
+  return request<IMockData>({
+    url: `${process.env.NEXT_PUBLIC_HOST}/api/indexStore`,
+    method: "GET",
+  });
+}
 // export function fetchProviceList() {
-//   return request<IProviceListResult>({
-//     url: `${process.env.NEXT_PUBLIC_HOST}/region/province`,
-//     method: 'GET',
-//   })
+//   return new Promise<IProviceListResult>((resolve) => {
+//     resolve({ code: 200, message: "", result: "" });
+//   });
 // }
-export function fetchProviceList() {
-  return new Promise<IProviceListResult>(resolve => {
-    resolve({ code: 200, message: '', result: '' })
-  })
-}

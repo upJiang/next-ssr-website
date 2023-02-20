@@ -1,34 +1,35 @@
 import { Button } from "antd";
-import { Avatar, Button as ButtonMobile } from "antd-mobile";
+import { Button as ButtonMobile } from "antd-mobile";
 
-import { fetchProviceList } from "./home/api";
+import Layout from "../components/layout";
+import type { IMockData } from "./home/api";
+import { fetchMockData } from "./home/api";
 import styles from "./home/index.module.scss";
 
-// import type { IProvice } from './home/api'
-
-// const headSeo = {
-//   keywords: '111',
-//   description: `“222。 ${props.storeList.seo}`,
-//   title: '官网实战',
-// }
-// props: { proviceList: IProvice[] }
-export default function () {
+export default function (props: { mockData: IMockData }) {
+  console.log("mockData", props.mockData);
+  const headSeo = {
+    keywords: "sso、nextjs、antd、jiang",
+    description: `seo实践 ${props.mockData.seo}`,
+    title: "nextJs 官网 SSR 实战",
+  };
   return (
-    <div>
-      <Button type="primary">antd 按钮</Button>
-      <ButtonMobile color="primary">antd-mobile 按钮</ButtonMobile>
-      <div className={styles["home-container"]}>官网实战</div>;
-      <Avatar src="" />
-    </div>
+    <Layout seo={headSeo}>
+      <div>
+        <Button type="primary">antd 按钮</Button>
+        <ButtonMobile color="primary">antd-mobile 按钮</ButtonMobile>
+        <div className={styles["home-container"]}>官网实战</div>;
+      </div>
+    </Layout>
   );
 }
 
 export async function getStaticProps() {
-  // 获取门店列表
-  const res2 = await fetchProviceList();
-  const proviceList = res2.result;
+  // 获取mock数据
+  const res = await fetchMockData();
+  const mockData = res;
 
   return {
-    props: { proviceList },
+    props: { mockData },
   };
 }

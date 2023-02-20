@@ -4,11 +4,13 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev:mock": "concurrently  \"yarn mock\" \"next dev\"",
     "build": "cross-env NODE_ENV=test next build",
     "export:test": "cross-env NODE_ENV=test next build && next export",
     "export:prod": "cross-env NODE_ENV=production next build && next export",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "mock": "cd ./mock && json-server --watch data.json --routes routes.json --port 4000"
   },
   "dependencies": {
     "@next/font": "13.1.6",
@@ -30,12 +32,14 @@
     "@commitlint/config-conventional": "^17.4.3",
     "@typescript-eslint/eslint-plugin": "^5.52.0",
     "@typescript-eslint/parser": "^5.52.0",
+    "concurrently": "^7.6.0",
     "cross-env": "^7.0.3",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "husky": "^8.0.3",
+    "json-server": "^0.17.1",
     "next-transpile-modules": "^10.0.0",
     "postcss-px-to-viewport": "^1.1.1",
     "prettier": "^2.8.4",

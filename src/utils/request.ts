@@ -1,5 +1,6 @@
 import { notification } from "antd";
-import axios, { AxiosError, AxiosRequestConfig } from "axios";
+import type { AxiosError, AxiosRequestConfig } from "axios";
+import axios from "axios";
 
 const instance = axios.create({
   timeout: 30 * 1000,
