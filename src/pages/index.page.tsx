@@ -1,8 +1,9 @@
 import { Button } from "antd";
+import { Avatar, Button as ButtonMobile } from "antd-mobile";
 
-// import { Typography } from "antd";
 import { fetchProviceList } from "./home/api";
 import styles from "./home/index.module.scss";
+
 // import type { IProvice } from './home/api'
 
 // const headSeo = {
@@ -15,7 +16,9 @@ export default function () {
   return (
     <div>
       <Button type="primary">antd 按钮</Button>
+      <ButtonMobile color="primary">antd-mobile 按钮</ButtonMobile>
       <div className={styles["home-container"]}>官网实战</div>;
+      <Avatar src="" />
     </div>
   );
 }

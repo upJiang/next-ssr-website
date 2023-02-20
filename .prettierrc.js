@@ -1,6 +1,6 @@
 module.exports = {
   singleQuote: false,
-  trailingComma: "all",
+  trailingComma: 'all',
   printWidth: 80,
-  htmlWhitespaceSensitivity: "ignore",
+  htmlWhitespaceSensitivity: 'ignore',
 };

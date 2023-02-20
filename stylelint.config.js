@@ -6,7 +6,6 @@ module.exports = {
     "stylelint-prettier/recommended",
     "stylelint-config-prettier",
     "stylelint-config-clean-order",
-    "stylelint-config-css-modules",
   ],
   rules: {
     "prettier/prettier": true,

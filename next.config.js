@@ -1,5 +1,7 @@
 const path = require("path");
 
+const withTM = require("next-transpile-modules")(["antd-mobile"]); // 兼容antd-mobile
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   pageExtensions: ["page.tsx", "page.ts", "page.jsx", "page.js"],
@@ -39,4 +41,4 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig;
+module.exports = withTM(nextConfig);
